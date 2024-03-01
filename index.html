@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Locale and Currencies formatter examples</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <h1>Fun with Locale Formatters</h1>
+      <header>
+        <details>
+          <summary>What is this page all about?</summary>
+          <p>
+            This is a simple web page that showcases the
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl"
+              >Intl</a
+            >
+            object, using it to format dates, times, numbers, and currencies according to the a
+            specified locale. Just plain HTML and JavaScript, no 3rd-party libraries are used which
+            also proves that you can do a lot with the web platform itself.
+          </p>
+        </details>
+        <p>
+          Browser default locale is <strong id="browserLocale"></strong> and currency default is
+          <strong>EURO</strong>
+        </p>
+      </header>
+      <section id="settings">
+        <p>
+          <label for="localeSel">Choose a locale ☞</label>
+          <select id="localeSel" onchange="updateLocaleExamples()">
+            <option value="ar-SA">Arabic (Saudi Arabia)</option>
+            <option value="zh-CN">Chinese (Simplified)</option>
+            <option value="zh-TW">Chinese (Traditional)</option>
+            <option value="cs-CZ">Czech (Czech Republic)</option>
+            <option value="da-DK">Danish (Denmark)</option>
+            <option value="nl-NL">Dutch (Netherlands)</option>
+            <option value="de-DE">German (Germany)</option>
+            <option value="el-GR">Greek (Greece)</option>
+            <option value="en-GB">English (United Kingdom)</option>
+            <option value="en-IN">English (India)</option>
+            <option value="en-US">English (United States)</option>
+            <option value="fi-FI">Finnish (Finland)</option>
+            <option value="fr-FR">French (France)</option>
+            <option value="he-IL">Hebrew (Israel)</option>
+            <option value="hu-HU">Hungarian (Hungary)</option>
+            <option value="it-IT">Italian (Italy)</option>
+            <option value="ja-JP">Japanese (Japan)</option>
+            <option value="ko-KR">Korean (South Korea)</option>
+            <option value="klingon">Klingon (H'atoria)</option>
+            <option value="no-NO">Norwegian (Norway)</option>
+            <option value="pl-PL">Polish (Poland)</option>
+            <option value="pt-BR">Portuguese (Brazil)</option>
+            <option value="pt-PT">Portuguese (Portugal)</option>
+            <option value="ru-RU">Russian (Russia)</option>
+            <option value="es-ES">Spanish (Spain)</option>
+            <option value="sv-SE">Swedish (Sweden)</option>
+            <option value="tr-TR">Turkish (Turkey)</option>
+          </select>
+          <button onclick="resetLocaleExamples()">Reset</button>
+        </p>
+        <p>
+          <label for="currencySel">Choose a currency ☞</label>
+          <select id="currencySel" onchange="updateLocaleExamples()">
+            <optgroup label="Some Two-decimal currencies">
+              <option value="AUD">Australian Dollar (AUD)</option>
+              <option value="GBP">British Pound Sterling (GBP)</option>
+              <option value="CAD">Canadian Dollar (CAD)</option>
+              <option value="CNY">Chinese Yuan Renminbi (CNY)</option>
+              <option value="EUR">Euro (EUR)</option>
+              <option value="NZD">New Zealand Dollar (NZD)</option>
+              <option value="CHF">Swiss Franc (CHF)</option>
+              <option value="SEK">Swedish Krona (SEK)</option>
+              <option value="USD">United States Dollar (USD)</option>
+            </optgroup>
+            <optgroup label="Some Zero-decimal currencies">
+              <option value="BIF">Burundian Franc (BIF)</option>
+              <option value="CLP">Chilean Peso (CLP)</option>
+              <option value="KMF">Comorian Franc (KMF)</option>
+              <option value="DJF">Djiboutian Franc (DJF)</option>
+              <option value="GNF">Guinean Franc (GNF)</option>
+              <option value="JPY">Japanese Yen (JPY)</option>
+              <option value="MGA">Malagasy Ariary (MGA)</option>
+              <option value="KRW">South Korean Won (KRW)</option>
+            </optgroup>
+
+            <optgroup label="Some Three-decimal currencies">
+              <option value="BHD">Bahraini Dinar (BHD)</option>
+              <option value="JOD">Jordanian Dinar (JOD)</option>
+              <option value="KWD">Kuwaiti Dinar (KWD)</option>
+              <option value="OMR">Omani Rial (OMR)</option>
+              <option value="TND">Tunisian Dinar (TND)</option>
+            </optgroup>
+          </select>
+        </p>
+      </section>
+      <section id="samples">
+        <dl id="examples">
+          <dt>Dates</dt>
+          <dd id="dateEx"></dd>
+          <dt>Time</dt>
+          <dd id="timeEx"></dd>
+          <dt>Numbers</dt>
+          <dd id="numberEx"></dd>
+          <dt>Money</dt>
+          <dd id="moneyEx"></dd>
+        </dl>
+      </section>
+      <footer>Made with ❤️ by <a href="https://claudio.cica.li/links">Claudio</a></footer>
+    </main>
+  </body>
+
+  <script src="updater.js"></script>
+</html>
